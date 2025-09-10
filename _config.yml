@@ -18,9 +18,9 @@ menu:
   - title: Feed
     url: /feed.xml
   - title : Math Note
-    url: kodernote.github.io
+    url: https://kodernote.github.io
   - title : Main page
-    url : ko-web.com
+    url : https://ko-web.com
 
 email: rhrjsdn0610@gmail.com
 
