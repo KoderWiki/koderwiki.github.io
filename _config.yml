@@ -15,12 +15,6 @@ menu:
     url: /about
   - title: Contact
     url: /contact
-  - title: Feed
-    url: /feed.xml
-  - title : Math Note
-    url: https://kodernote.github.io
-  - title : Main page
-    url : https://ko-web.com
 
 email: rhrjsdn0610@gmail.com
 
