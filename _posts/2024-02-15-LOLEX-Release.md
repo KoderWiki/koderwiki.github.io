@@ -1,11 +1,23 @@
 ---
+date: 2024-02-15 23:48:05
 layout: post
 title: LOLEX
-tags: [Web Develop, League of Legends, LOLEX]
-feature-img: "assets/img/0.post/2024-02-15/header2.png"
-thumbnail: "assets/img/0.post/2024-02-15/header.png"
-categories: LOLEX
+subtitle: 'League of Legends game data platform.'
+description: >-
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua.
+image: >-
+  assets/img/0.post/2024-02-15/header2.png
+optimized_image: >-
+  assets/img/0.post/2024-02-15/header.png
+category: blog
+tags:
+  - web
+  - blog
+author: geonu.Ko
+paginate: true
 ---
+
 
 [**LOLEX**](http://ko-web.com/lolex) is my first own web site and **League of Legends's** game data platform. <br>
 
