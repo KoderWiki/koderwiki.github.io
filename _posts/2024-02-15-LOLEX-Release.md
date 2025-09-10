@@ -4,8 +4,7 @@ layout: post
 title: LOLEX
 subtitle: 'League of Legends game data platform.'
 description: >-
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua.
+  A website built using the Riot API to display game data.
 image: >-
   assets/img/0.post/2024-02-15/header2.png
 optimized_image: >-
