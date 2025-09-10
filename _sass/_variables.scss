@@ -1,6 +1,14 @@
 /**
  * Set up here the general appearance of the theme.
  */
+$customFont: "Cafe24Anemone" !default;
+
+$serif: $customFont, Georgia, Times, serif !default;
+$sans-serif: $customFont, -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+  "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
+$monospace: $customFont, Monaco, Consolas, "Lucida Console", monospace !default;
+
+
 
 $themeColor: map-get($theme, themeColor) !default;
 $primaryDark: map-get($theme, primaryDark) !default;
@@ -23,9 +31,3 @@ $itemMinWidth: 300px;
 // Settings
 $maxItemsPerRow: 6;
 
-$customFont: "GMarketSans" !default;
-
-$serif: $customFont, Georgia, Times, serif !default;
-$sans-serif: $customFont, -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-  "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
-$monospace: $customFont, Monaco, Consolas, "Lucida Console", monospace !default;
