@@ -22,3 +22,9 @@ $itemMinWidth: 300px;
 
 // Settings
 $maxItemsPerRow: 6;
+
+$customFont: "Presentation";
+$serif: $customFont, Georgia, Times, serif !default;
+$sans-serif: $customFont, -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+  "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
+$monospace: $customFont, Monaco, Consolas, "Lucida Console", monospace !default;
