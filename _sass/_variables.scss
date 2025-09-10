@@ -1,8 +1,13 @@
 /**
  * Set up here the general appearance of the theme.
  */
-$customFont: "Cafe24Anemone" !default;
+$font-family-main: 'Cafe24Anemone', Helvetica, Arial, sans-serif;
+$font-family-headings: 'Cafe24Anemone', Helvetica, Arial, sans-serif;
+$font-family-logo: 'Cafe24Anemone', Helvetica, Arial, sans-serif;
+$font-size: 1.25em;
 
+$customFont: "Cafe24Anemone" !default;
+$cafe24: "Cafe24Anemone" !default;
 $serif: $customFont, Georgia, Times, serif !default;
 $sans-serif: $customFont, -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
