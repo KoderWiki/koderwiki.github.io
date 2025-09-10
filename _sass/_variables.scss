@@ -23,7 +23,8 @@ $itemMinWidth: 300px;
 // Settings
 $maxItemsPerRow: 6;
 
-$customFont: "GMarketSans";
+$customFont: "GMarketSans" !default;
+
 $serif: $customFont, Georgia, Times, serif !default;
 $sans-serif: $customFont, -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
