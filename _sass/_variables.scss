@@ -6,12 +6,11 @@ $font-family-headings: 'Cafe24Anemone', Helvetica, Arial, sans-serif;
 $font-family-logo: 'Cafe24Anemone', Helvetica, Arial, sans-serif;
 $font-size: 1.25em;
 
-$customFont: "Cafe24Anemone" !default;
+$monospace: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, sans-serif !default;
 $cafe24: "Cafe24Anemone" !default;
-$serif: $customFont, Georgia, Times, serif !default;
-$sans-serif: $customFont, -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-  "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
-$monospace: $customFont, Monaco, Consolas, "Lucida Console", monospace !default;
+$font-size-code: 0.85em !default;
+$font-height-code: 1.3em !default;
+$border-radius: 4px !default;
 
 
 
