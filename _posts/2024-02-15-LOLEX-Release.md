@@ -4,9 +4,9 @@ layout: post
 title: LOLEX
 subtitle: 'League of Legends game data platform.'
 description: >-
-  A website built using the Riot API to display game data.
+  League of Legends game data platform.
 image: >-
-  assets/img/0.post/2024-02-15/header.png
+  assets/img/0.post/2024-02-15/header2.png
 optimized_image: >-
   assets/img/0.post/2024-02-15/header.png
 category: blog
@@ -35,9 +35,13 @@ paginate: true
 
 It is the most basic funtion of this site. Using **RIOT Api**, Showing Summoner's Info, Match data and Graph, etc..
 
+![image](https://github.com/KoderWiki/koderwiki.github.io/assets/153072257/6d8d8bf7-526e-42c7-816f-56b00f3d0e48)
+
 ### 2. Champion Mastery
 
 It shows the summoner's champion Mastery list you want
+
+![image](https://github.com/KoderWiki/koderwiki.github.io/assets/153072257/e9d6f6f0-1dd9-4697-9a3f-55edfb024ff8)
 
 ### 3. Process of Running
 
@@ -110,6 +114,7 @@ def get_data(name, apikey): #riot_id = 최고의피니셔 riot_tag = KR1 lol_nam
 ### 3.2 Match History
 
 **Process**<br>
+![image](https://github.com/KoderWiki/koderwiki.github.io/assets/153072257/fcc6ac70-d8bc-4de1-ad0a-c322f8b3e690)
 
 ```python
 def get_match(puuid, lol_version, start_count, end_count, apikey):
