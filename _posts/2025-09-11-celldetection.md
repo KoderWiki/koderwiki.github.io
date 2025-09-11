@@ -34,7 +34,6 @@ use_math : true
 
 <br>
 
-
 <br>
 
 #### IMAGE PREPROCESSING
@@ -82,15 +81,15 @@ def detect_cells(img):
 
 **plpeline summary** <br>
 
-Contrast enhancement (CLAHE) <br>
+① Contrast enhancement (CLAHE) <br>
 
-Background estimation (Gaussian blur) <br>
+② Background estimation (Gaussian blur) <br>
 
-Backgroud subtraction (subtract) <br>
+③ Backgroud subtraction (subtract) <br>
 
-Normalization <br>
+④ Normalization <br>
 
-Median filtering <br>
+⑤ Median filtering <br>
 
 원본에서 배경을 빼서 추출하는 과정으로 원하는 부분 추출 <br>
 <br>
@@ -122,16 +121,16 @@ Median filtering <br>
     vis = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
 ```
 
-참고 <br>
-cv2.connectedComponentsWithStats(th, connectivity=8) <br>
+**참고** <br>
+**cv2.connectedComponentsWithStats(th, connectivity=8)** <br>
 <br>
-connectivity : 4 or 8 (default = 8) <br>
-4 connectivity : 상하좌우 <br>
-8 connectivity : 상화좌우 + 대각선 (opencv는 보통 8) <br>
-n : 찾은 component 개수 <br>
-labels : 각 픽셀마다 속하는 컴포넌트 라벨 id <br>
-stats : 각 컴포넌트의 바운딩 박스, 면적 등 통계 정보 <br>
-centroids : 각 컴포넌트의 중심좌표 <br>
+> connectivity : 4 or 8 (default = 8) <br>
+> 4 connectivity : 상하좌우 <br>
+> 8 connectivity : 상화좌우 + 대각선 (opencv는 보통 8) <br>
+> n : 찾은 component 개수 <br>
+> labels : 각 픽셀마다 속하는 컴포넌트 라벨 id <br>
+> stats : 각 컴포넌트의 바운딩 박스, 면적 등 통계 정보 <br>
+> centroids : 각 컴포넌트의 중심좌표 <br>
 <br>
 stats = [x_min, y_min, width, height, area] <br>
 <br>
@@ -158,6 +157,10 @@ stats = [x_min, y_min, width, height, area] <br>
 ```
 
 이미지 중 세포를 인식하긴 했지만 배경 구조물과 객체의 오인식으로 인해 noise가 다수 존재하고 있다. <br>
+
+**결과**
+<img width="1760" height="1091" alt="image" src="https://github.com/user-attachments/assets/8eed1a92-9df5-4dfd-9dc1-88e5ec6d2789" />
+
 
 
 <br>
