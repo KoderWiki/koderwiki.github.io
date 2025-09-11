@@ -6,9 +6,9 @@ subtitle: 'Activation Functions: The Key to Nonlinearity in Neural Networks.'
 description: >-
   Description about an Activation Function.
 image: >-
-  assets/img/0.post/2024-04-16/header.png
+  https://koderwiki.github.io/assets/img/0.post/2024-04-16/header.png
 optimized_image: >-
-  assets/img/0.post/2024-04-16/header.png
+  https://koderwiki.github.io/assets/img/0.post/2024-04-16/header.png
 category: blog
 tags:
   - Machine Learning

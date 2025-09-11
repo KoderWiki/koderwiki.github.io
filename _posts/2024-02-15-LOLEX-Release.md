@@ -6,9 +6,9 @@ subtitle: 'League of Legends game data platform.'
 description: >-
   League of Legends game data platform.
 image: >-
-  assets/img/0.post/2024-02-15/header2.png
+  https://koderwiki.github.io/assets/img/0.post/2024-02-15/header2.png
 optimized_image: >-
-  assets/img/0.post/2024-02-15/header.png
+  https://koderwiki.github.io/assets/img/0.post/2024-02-15/header.png
 category: blog
 tags:
   - web
