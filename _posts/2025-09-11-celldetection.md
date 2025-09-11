@@ -164,7 +164,7 @@ stats = [x_min, y_min, width, height, area] <br>
 
 #### MCD APPLICATION
 
-MCD에 관한 자세한 설명은 [본 글]([Thesis review, Minimum Covariance Determinant | Koder Wiki](https://koderwiki.github.io/cse,/ai/2025/08/11/MCD.html)) 참조 <br>
+MCD에 관한 자세한 설명은([Thesis review, Minimum Covariance Determinant, Koder Wiki](https://koderwiki.github.io/cse,/ai/2025/08/11/MCD.html)) 참조 <br>
 
 <br>
 
