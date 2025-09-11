@@ -9,7 +9,7 @@ image: >-
   https://koderwiki.github.io/assets/img/0.post/2024-04-16/header.png
 optimized_image: >-
   https://koderwiki.github.io/assets/img/0.post/2024-04-16/header.png
-category: blog
+category: Machine Learning
 tags:
   - Machine Learning
   - Activation Function
