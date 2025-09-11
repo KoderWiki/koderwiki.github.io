@@ -1,10 +1,22 @@
 ---
+date: 2024-04-16 22:30:15
 layout: post
-title: Activation Function, What is it?
-tags: [ANN, CSE, Data Science, AI]
-feature-img: "assets/img/0.post/2024-04-16/header.png"
-thumbnail: "assets/img/0.post/2024-04-16/header.png"
-categories: CSE, AI
+title: Activation Function
+subtitle: 'Activation Functions: The Key to Nonlinearity in Neural Networks.'
+description: >-
+  Description about an Activation Function.
+image: >-
+  assets/img/0.post/2024-04-16/header.png
+optimized_image: >-
+  assets/img/0.post/2024-04-16/header.png
+category: blog
+tags:
+  - Machine Learning
+  - Activation Function
+  - CSE
+  - blog
+author: geonu.Ko
+paginate: true
 ---
 
 &emsp;**활성화 함수**(Activation function)란 **퍼셉트론**(Perceptron)의 출력값을 결정하는 함수이다. 많은 종류의 활성화 함수가 존재하고, 활성화 함수의 결정이 결과값에 크게 영향을 준다. 인공신경망 관련 글은 [**이곳**](https://koderwiki.github.io/cse/2024/04/12/ANN.html) 참조
