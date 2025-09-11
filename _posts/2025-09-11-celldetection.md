@@ -26,7 +26,7 @@ use_math : true
 
 
 
-#### Abstract
+### Abstract
 
     저속촬영이 가능한 현미경을 통해 얻어진 세포동영상에서 세포활동의 추적 및 분석은 종양의 전이, 바이러스의 침입, 상처회복, 세포분열과 같은 복잡한 생물학적 과정을 이해하는데 있어 매우 중요한 역할을 담당한다. 그중 정확한 세포 검출(cell detection)은 세포 퐐동 추적, 이동 분석, 형태 계량화 같은 바이오 이미징 분석의 기초가 된다. 하지만 원시 검출 결과(raw detection results)에는 배경 구조물, 객체의 오인식 등으로 잘못된 영역이 포함되기 쉽고, 이러한 잡음은 통계적 분석을 왜곡시키고 생물학적 해석에 잘못된 결론을 초래할 수 있다.
 
@@ -34,14 +34,13 @@ use_math : true
 
 <br>
 
-
 <br>
 
-#### IMAGE PREPROCESSING
+### IMAGE PREPROCESSING
 
 dataset : https://celltrackingchallenge.net/2d-datasets/ <br>
 
-source code : <br>
+source code : https://github.com/KoderWiki/CELL_DETECTION <br>
 
 <br>
 
@@ -82,15 +81,15 @@ def detect_cells(img):
 
 **plpeline summary** <br>
 
-Contrast enhancement (CLAHE) <br>
+① Contrast enhancement (CLAHE) <br>
 
-Background estimation (Gaussian blur) <br>
+② Background estimation (Gaussian blur) <br>
 
-Backgroud subtraction (subtract) <br>
+③ Backgroud subtraction (subtract) <br>
 
-Normalization <br>
+④ Normalization <br>
 
-Median filtering <br>
+⑤ Median filtering <br>
 
 원본에서 배경을 빼서 추출하는 과정으로 원하는 부분 추출 <br>
 <br>
@@ -122,16 +121,16 @@ Median filtering <br>
     vis = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
 ```
 
-참고 <br>
-cv2.connectedComponentsWithStats(th, connectivity=8) <br>
+**참고** <br>
+**cv2.connectedComponentsWithStats(th, connectivity=8)** <br>
 <br>
-connectivity : 4 or 8 (default = 8) <br>
-4 connectivity : 상하좌우 <br>
-8 connectivity : 상화좌우 + 대각선 (opencv는 보통 8) <br>
-n : 찾은 component 개수 <br>
-labels : 각 픽셀마다 속하는 컴포넌트 라벨 id <br>
-stats : 각 컴포넌트의 바운딩 박스, 면적 등 통계 정보 <br>
-centroids : 각 컴포넌트의 중심좌표 <br>
+> connectivity : 4 or 8 (default = 8) <br>
+> 4 connectivity : 상하좌우 <br>
+> 8 connectivity : 상화좌우 + 대각선 (opencv는 보통 8) <br>
+> n : 찾은 component 개수 <br>
+> labels : 각 픽셀마다 속하는 컴포넌트 라벨 id <br>
+> stats : 각 컴포넌트의 바운딩 박스, 면적 등 통계 정보 <br>
+> centroids : 각 컴포넌트의 중심좌표 <br>
 <br>
 stats = [x_min, y_min, width, height, area] <br>
 <br>
@@ -159,10 +158,13 @@ stats = [x_min, y_min, width, height, area] <br>
 
 이미지 중 세포를 인식하긴 했지만 배경 구조물과 객체의 오인식으로 인해 noise가 다수 존재하고 있다. <br>
 
+**결과**
+<img width="1760" height="1091" alt="image" src="https://github.com/user-attachments/assets/8eed1a92-9df5-4dfd-9dc1-88e5ec6d2789" />
+
 
 <br>
 
-#### MCD APPLICATION
+### MCD APPLICATION
 
 MCD에 관한 자세한 설명은([Thesis review, Minimum Covariance Determinant, Koder Wiki](https://koderwiki.github.io/cse,/ai/2025/08/11/MCD.html)) 참조 <br>
 
@@ -238,6 +240,10 @@ for f in PREVIEW:
     plt.show()
 ```
 
+**output**
+<img width="715" height="745" alt="image" src="https://github.com/user-attachments/assets/f06c8ceb-d3b8-4af7-bd8a-8b79541b171f" />
+
+
 세포 중심 분포를 통해 잡음을 다수 제거하는 모습을 볼 수 있다.
 
 ## Visualization comparing classical and robust ellipse
@@ -294,6 +300,7 @@ def classical_fit_and_ellipse(dets, alpha=ALPHA, ridge=1e-6):
 
 classical ellipse에 비해 robust ellipse가 훨씬 정확하게 noise를 제거하는 것을 볼 수 있다.
 
+<img width="709" height="741" alt="image" src="https://github.com/user-attachments/assets/e5d51816-8574-461d-9a1a-33a88de6563d" />
 
 
 
@@ -334,6 +341,9 @@ def iforest_filter_centers(dets, use_area=False):
 ```
 
 Isolation Forest 또한 이상치를 다수 제거하고 있지만, MCD에 비해 정상적인 데이터 또한 잡음으로 고립시켜 제거하고 있다.
+
+<img width="710" height="749" alt="image" src="https://github.com/user-attachments/assets/79e8fcf6-367f-4c69-bd23-ea32c11e3afe" />
+
 
 
 ## Limitations
