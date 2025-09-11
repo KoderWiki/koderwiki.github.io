@@ -1,165 +1,201 @@
 <!DOCTYPE html>
 <html lang="{{ site.language }}" class="no-js">
-    {% include head.html %}
-    <body class="has-push-menu">
-        {% include minutes-to-read.html %}
-        {% include svg-icons.html %}
-        {% include header.html %}
+  {% include head.html %}
+  <body class="has-push-menu">
+    {% include minutes-to-read.html %}
+    {% include svg-icons.html %}
+    {% include header.html %}
 
-        <section class="post {% if site.two_columns_layout %}two-columns{% else %}one-column{% endif %}">
-            <article role="article" class="post-content">
-                <p class="post-info">
-                    {% if page.date %}
-                        <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="{{ page.date | date_to_xmlschema }}">
-                            {% include date.html date=page.date %}
-                        </time>
-                    {% endif %}
-                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>{{ minutesText }}</span>
-                </p>
-                <h1 class="post-title">{{ page.title }}</h1>
-                <p class="post-subtitle">{{ page.subtitle }}</p>
+    <section class="post {% if site.two_columns_layout %}two-columns{% else %}one-column{% endif %}">
+      <article role="article" class="post-content">
+        <p class="post-info">
+          {% if page.date %}
+            <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
+            <time class="date" datetime="{{ page.date | date_to_xmlschema }}">
+              {% include date.html date=page.date %}
+            </time>
+          {% endif %}
+          <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+          <span>{{ minutesText }}</span>
+        </p>
 
-                {% if page.image and paginator.activated == nil %}
-                    <img src="{{ page.image | absolute_url }}" alt="Featured image" class="post-cover">
-                {% endif %}
+        <h1 class="post-title">{{ page.title }}</h1>
+        <p class="post-subtitle">{{ page.subtitle }}</p>
 
-                {% include pagination-post.html progressBar=true %}
-
-                {% include toc.html %}
-
-                {{ content }}
-
-                {% include pagination-post.html %}
-            </article>
-
-            {% if site.two_columns_layout %}
-                <aside class="see-also">
-                    <h2>{{ site.translations.text.see_also | default: "See also" }}</h2>
-                    <ul>
-                        {% assign next_posts = site.posts | where_exp:"post","post.is_generated != true" | where_exp:"post","post.path != page.path" %}
-                        {% assign shuffled_array = next_posts | shuffle %}
-                        {% for post in shuffled_array limit:3 %}
-                            <li>
-                                <a href="{{ post.url | absolute_url }}">
-                                    {% if post.optimized_image %}
-                                        <img src="{{ post.optimized_image | absolute_url }}">
-                                    {% elsif post.image %}
-                                        <img src="{{ post.image | absolute_url }}">
-                                    {% else %}
-                                        <img src="{{ '/assets/img/off.jpg' | absolute_url }}">
-                                    {% endif %}
-                                    <h3>{{ post.title }}</h3>
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </aside>
-            {% endif %}
-
-        </section>
-
-        <!-- Add time bar only for pages without pagination -->
-        {% if paginator.activated == nil and site.show_time_bar == true %}
-            {% include time-bar.html %}
-            {% include recommendation.html %}
+        {% if page.image and paginator.activated == nil %}
+          {%- assign raw = page.image -%}
+          {%- assign head2 = raw | slice: 0, 2 -%}
+          {%- if raw contains '://' or head2 == '//' -%}
+            <img src="{{ raw }}" alt="Featured image" class="post-cover">
+          {%- else -%}
+            {%- assign first = raw | slice: 0, 1 -%}
+            {%- if first != '/' -%}{% assign raw = '/' | append: raw %}{%- endif -%}
+            <img src="{{ raw | absolute_url }}" alt="Featured image" class="post-cover">
+          {%- endif -%}
         {% endif %}
 
-        <!-- Show modal if the post is the last one -->
-        {% if paginator.is_last and site.show_modal_on_finish_post %}
-            {% include modal.html title="You made it!" subtitle="Why don't you try another?" %}
-        {% endif %}
+        {% include pagination-post.html progressBar=true %}
+        {% include toc.html %}
 
-        <!-- Show modal before user leaves the page -->
-        {% if site.show_modal_on_exit %}
-            {% include modal.html title="Don't go yet!" subtitle="You may also like..." closed=true showOnExit=true %}
-        {% endif %}
+        {{ content }}
 
-        {% include subscription.html %}
-        {% include share.html %}
-        {% include author.html %}
-        {% include comments.html %}
-        {% include footer.html %}
+        {% include pagination-post.html %}
+      </article>
 
-        {% assign author = site.authors | where: "name", post.author | first %}
+      {% if site.two_columns_layout %}
+        <aside class="see-also">
+          <h2>{{ site.translations.text.see_also | default: "See also" }}</h2>
+          <ul>
+            {% assign next_posts = site.posts | where_exp:"post","post.is_generated != true" | where_exp:"post","post.path != page.path" %}
+            {% assign shuffled_array = next_posts | shuffle %}
+            {% for post in shuffled_array limit:3 %}
+              <li>
+                <a href="{{ post.url | absolute_url }}">
+                  {%- assign raw = post.optimized_image | default: post.image | default: '/assets/img/off.jpg' -%}
+                  {%- assign head2 = raw | slice: 0, 2 -%}
+                  {%- if raw contains '://' or head2 == '//' -%}
+                    <img src="{{ raw }}">
+                  {%- else -%}
+                    {%- assign first = raw | slice: 0, 1 -%}
+                    {%- if first != '/' -%}{% assign raw = '/' | append: raw %}{%- endif -%}
+                    <img src="{{ raw | absolute_url }}">
+                  {%- endif -%}
+                  <h3>{{ post.title }}</h3>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </aside>
+      {% endif %}
 
-        {% assign author_urls = '' %}
-        {% if author.github_username %}
-            {% assign author_urls = author_urls | append: '"https://github.com/' | append: author.github_username | append: '",' %}
-        {% endif %}
-        {% if author.facebook_username %}
-            {% assign author_urls = author_urls | append: '"https://www.facebook.com/' | append: author.facebook_username | append: '",' %}
-        {% endif %}
-        {% if author.twitter_username %}
-            {% assign author_urls = author_urls | append: '"https://twitter.com/' | append: author.twitter_username | append: '",' %}
-        {% endif %}
-        {% if author.medium_username %}
-            {% assign author_urls = author_urls | append: '"https://medium.com/@' | append: author.medium_username | append: '",' %}
-        {% endif %}
-        {% if author.instagram_username %}
-            {% assign author_urls = author_urls | append: '"https://www.instagram.com/' | append: author.instagram_username | append: '",' %}
-        {% endif %}
-        {% if author.linkedin_username %}
-            {% assign author_urls = author_urls | append: '"https://www.linkedin.com/in/' | append: author.linkedin_username | append: '",' %}
-        {% endif %}
-        {% if page.math %}
-        <script>
-            MathJax = {
-                tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-                }
-            };
-        </script>
-        <script type="text/javascript" id="MathJax-script" async
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-        </script>
-        {% endif %}
-        <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "BlogPosting",
-            "name": "{{ page.title }}",
-            "headline": "{{ page.subtitle }}",
-            "description": "{{ page.description }}",
-            "image": "{{ page.image | absolute_url }}",
-            "url": "{{ page.url | absolute_url }}",
-            "articleBody": "{{ content | strip_html | xml_escape | textilize }}",
-            "wordcount": "{{ content | number_of_words }}",
-            "inLanguage": "{{ site.language }}",
-            "dateCreated": "{{ page.date | date: '%Y-%m-%d/' }}",
-            "datePublished": "{{ page.date | date: '%Y-%m-%d/' }}",
-            "dateModified": "{{ page.date | date: '%Y-%m-%d/' }}",
-            "author": {
-                "@type": "Person",
-                "name": "{{ author.display_name }}",
-                {% if author.photo %}
-                "image": "{{ author.photo | absolute_url }}",
-                {% else %}
-                "image": "{{ '/assets/img/user.jpg' | absolute_url }}",
-                {% endif %}
-                "jobTitle": "{{ author.position }}",
-                "url": "{{ author.url | absolute_url }}",
-                "sameAs": [
-                    {{ author_urls | split: "," | join: "," }}
-                ]
-            },
-            "publisher": {
-                "@type": "Organization",
-                "name": "{{ site.name }}",
-                "url": "{{ '/' | absolute_url }}",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "{{ '/assets/img/blog-image.png' | absolute_url }}",
-                    "width": "600",
-                    "height": "315"
-                }
-            },
-            "mainEntityOfPage": "True",
-            "genre": "{{ page.category }}",
-            "articleSection": "{{ page.category }}",
-            "keywords": [{{ page.tags | join: '","' | append: '"' | prepend: '"' }}]
+    </section>
+
+    {% if paginator.activated == nil and site.show_time_bar == true %}
+      {% include time-bar.html %}
+      {% include recommendation.html %}
+    {% endif %}
+
+    {% if paginator.is_last and site.show_modal_on_finish_post %}
+      {% include modal.html title="You made it!" subtitle="Why don't you try another?" %}
+    {% endif %}
+
+    {% if site.show_modal_on_exit %}
+      {% include modal.html title="Don't go yet!" subtitle="You may also like..." closed=true showOnExit=true %}
+    {% endif %}
+
+    {% include subscription.html %}
+    {% include share.html %}
+    {% include author.html %}
+    {% include comments.html %}
+    {% include footer.html %}
+
+    {% assign author = site.authors | where: "name", post.author | first %}
+
+    {% assign author_urls = '' %}
+    {% if author.github_username %}
+      {% assign author_urls = author_urls | append: '"https://github.com/' | append: author.github_username | append: '",' %}
+    {% endif %}
+    {% if author.facebook_username %}
+      {% assign author_urls = author_urls | append: '"https://www.facebook.com/' | append: author.facebook_username | append: '",' %}
+    {% endif %}
+    {% if author.twitter_username %}
+      {% assign author_urls = author_urls | append: '"https://twitter.com/' | append: author.twitter_username | append: '",' %}
+    {% endif %}
+    {% if author.medium_username %}
+      {% assign author_urls = author_urls | append: '"https://medium.com/@' | append: author.medium_username | append: '",' %}
+    {% endif %}
+    {% if author.instagram_username %}
+      {% assign author_urls = author_urls | append: '"https://www.instagram.com/' | append: author.instagram_username | append: '",' %}
+    {% endif %}
+    {% if author.linkedin_username %}
+      {% assign author_urls = author_urls | append: '"https://www.linkedin.com/in/' | append: author.linkedin_username | append: '",' %}
+    {% endif %}
+
+    {% if page.math %}
+      <script>
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+      </script>
+      <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+      </script>
+    {% endif %}
+
+    {%- comment -%}
+      JSON-LD: 이미지/URL도 절대경로 보장
+    {%- endcomment -%}
+    {% assign json_image_raw = page.image | default: '/assets/img/blog-image.png' %}
+    {% assign hi2 = json_image_raw | slice: 0, 2 %}
+    {% if json_image_raw contains '://' or hi2 == '//' %}
+      {% assign json_image = json_image_raw %}
+    {% else %}
+      {% assign f1 = json_image_raw | slice: 0, 1 %}
+      {% if f1 != '/' %}{% assign json_image_raw = '/' | append: json_image_raw %}{% endif %}
+      {% assign json_image = json_image_raw | absolute_url %}
+    {% endif %}
+
+    {% assign author_photo_raw = author.photo | default: '/assets/img/user.jpg' %}
+    {% assign hi2 = author_photo_raw | slice: 0, 2 %}
+    {% if author_photo_raw contains '://' or hi2 == '//' %}
+      {% assign author_photo = author_photo_raw %}
+    {% else %}
+      {% assign f1 = author_photo_raw | slice: 0, 1 %}
+      {% if f1 != '/' %}{% assign author_photo_raw = '/' | append: author_photo_raw %}{% endif %}
+      {% assign author_photo = author_photo_raw | absolute_url %}
+    {% endif %}
+
+    {% assign author_url = author.url %}
+    {% if author_url and (author_url contains '://' or author_url | slice: 0, 2 == '//') %}
+      {% assign author_url_abs = author_url %}
+    {% else %}
+      {% assign author_url_abs = author_url | to_s %}
+      {% if author_url_abs != '' %}
+        {% assign first = author_url_abs | slice: 0, 1 %}
+        {% if first != '/' %}{% assign author_url_abs = '/' | append: author_url_abs %}{% endif %}
+        {% assign author_url_abs = author_url_abs | absolute_url %}
+      {% endif %}
+    {% endif %}
+
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "name": "{{ page.title }}",
+      "headline": "{{ page.subtitle }}",
+      "description": "{{ page.description }}",
+      "image": "{{ json_image }}",
+      "url": "{{ page.url | absolute_url }}",
+      "articleBody": "{{ content | strip_html | xml_escape | textilize }}",
+      "wordcount": "{{ content | number_of_words }}",
+      "inLanguage": "{{ site.language }}",
+      "dateCreated": "{{ page.date | date: '%Y-%m-%d/' }}",
+      "datePublished": "{{ page.date | date: '%Y-%m-%d/' }}",
+      "dateModified": "{{ page.date | date: '%Y-%m-%d/' }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ author.display_name }}",
+        "image": "{{ author_photo }}",
+        "jobTitle": "{{ author.position }}",
+        "url": "{{ author_url_abs }}",
+        "sameAs": [
+          {{ author_urls | split: "," | join: "," }}
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.name }}",
+        "url": "{{ '/' | absolute_url }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ '/assets/img/blog-image.png' | absolute_url }}",
+          "width": "600",
+          "height": "315"
         }
-        </script>
-    </body>
+      },
+      "mainEntityOfPage": "True",
+      "genre": "{{ page.category }}",
+      "articleSection": "{{ page.category }}",
+      "keywords": [{{ page.tags | join: '","' | append: '"' | prepend: '"' }}]
+    }
+    </script>
+  </body>
 </html>
