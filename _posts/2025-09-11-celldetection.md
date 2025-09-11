@@ -6,7 +6,7 @@ subtitle: 'MCD 활용한 노이즈 제거'
 description: >-
   세포 분열 연속 이미지에서 MCD를 이용한 CELL DETECTION
 image: >-
-  https://koderwiki.github.io/assets/img/0.post/bioimage/celldetection.png
+  https://koderwiki.github.io/assets/img/0.post/bioimage/cell_detection.mp4
 optimized_image: >-
   https://koderwiki.github.io/assets/img/0.post/bioimage/celldetection.png
 category: Computer Vision
