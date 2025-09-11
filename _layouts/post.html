@@ -123,7 +123,7 @@
             "headline": "{{ page.subtitle }}",
             "description": "{{ page.description }}",
             "image": "{{ page.image }}",
-            "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+            "url": "{{ prepend: site.url }}",
             "articleBody": "{{ content | strip_html | xml_escape | textilize }}",
             "wordcount": "{{ content | number_of_words }}",
             "inLanguage": "{{ site.language }}",
