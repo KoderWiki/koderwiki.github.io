@@ -1,5 +1,5 @@
 ---
-date: 2025-06-19 01:36:59
+date: 2025-09-11 01:36:59
 layout: post
 title: Cell Detection Using MCD
 subtitle: 'MCD 활용한 노이즈 제거'
