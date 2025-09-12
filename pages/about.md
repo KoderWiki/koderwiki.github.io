@@ -17,7 +17,7 @@ Computer Vision과 Machine Learning의 다양한 통계 기법들을 공부하�
 
 # Education
 
-**B.S., Incheon National University** (Mar. 2022 – Present)
+**B.S., Incheon National University** (Mar. 2022 – Present) <br>
 **Undergraduate Research Assistant, DLAB** (Jun. 2025 – Present)
 
 # Web site
