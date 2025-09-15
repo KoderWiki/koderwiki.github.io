@@ -1,5 +1,5 @@
 ---
-date: 2025-09-15 19:24:23
+date: 2025-09-14 19:24:23
 layout: post
 title: Protein homology modeling using UCSF Chimera
 subtitle: 'UCSF Chimera를 이용한 상동성 모델링'
