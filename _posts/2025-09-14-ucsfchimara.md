@@ -24,9 +24,6 @@ use_math : true
 
 ## Protein homology modeling using UCSF Chimera
 
-<img width="1070" height="783" alt="image" src="https://github.com/user-attachments/assets/00218c8a-c66b-47dc-8108-1ddaa9603756" />
-
-
 ### Introduction
 
     단백질의 3차원 구조는 그 기능과 생물학적 역할을 결정짓는 핵심 요소이기 때문에, 단백질 구조 예측은 구조생물학과 신약개발 분야에서 매우 중요한 과제이다.
