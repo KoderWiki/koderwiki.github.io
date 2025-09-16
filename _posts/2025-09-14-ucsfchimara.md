@@ -85,7 +85,7 @@ download : [UCSF Chimera Home Page](https://www.cgl.ucsf.edu/chimera/)
 
 <br>
 
-**fetch**
+**fetch** <br>
 
 <img width="400" height="747" alt="image" src="https://github.com/user-attachments/assets/9bb6808b-a44e-4c49-b263-8d52e4524559" />
 
@@ -93,7 +93,24 @@ USCF Chimera는 UniProt 코드를 이용해서 불러올 수 있다. <br>
 
 <br>
 
-****
+**Sequence** <br>
+
+<img width="1194" height="545" alt="image" src="https://github.com/user-attachments/assets/ffd2d98d-67e3-41fc-9ad6-272370abe4d5" />
+
+UniProt 코드로 불어모녀 다음과 같은 서열을 볼 수 있다. <br>
+<br>
+
+**Blast Protein** <br>
+
+BLAST protein은 Bioinformatics에서 가장 많이 쓰이는 시퀀스 비교 도구로, 어떤 단백질 서열이 주어지면 이미 알려진 단백질 데이터베이스에서 **비슷한 서열** 을 찾아주는 검색 도구이다. <br>
+위 sequence를 이용해서 비슷한 sequence를 가진 단백질을 조회해보자.
+
+<img width="869" height="359" alt="image" src="https://github.com/user-attachments/assets/ec6aed01-a9a1-426f-9b2d-01b5278ad7f5" />
+
+Name, Score, Discription 등 정보와 함께 비슷한 염기서열의 단백질들을 제공해주는데, 이중 Score는 얼마나 비슷한지에 대한 정량적 지표이다,
+
+
+
 
 
 
