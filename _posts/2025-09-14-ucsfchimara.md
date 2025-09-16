@@ -24,6 +24,9 @@ use_math : true
 
 ## Protein homology modeling using UCSF Chimera
 
+<img width="1070" height="783" alt="image" src="https://github.com/user-attachments/assets/00218c8a-c66b-47dc-8108-1ddaa9603756" />
+
+
 ### Introduction
 
     단백질의 3차원 구조는 그 기능과 생물학적 역할을 결정짓는 핵심 요소이기 때문에, 단백질 구조 예측은 구조생물학과 신약개발 분야에서 매우 중요한 과제이다.
@@ -59,6 +62,15 @@ Gag-Pol은 HIV에서 구조 단백질과 핵심 효소들을 한꺼번에 담고
 [**UniProt**](https://www.uniprot.org/uniprotkb/P03366/entry#structure) 은 단백질 서열과 기능 정보에 관한 가장 포괄적이고 무료로 이용할 수 있는 생물학 데이터베이스로, 연구 문헌에서 얻은 단백질의 생물학적 기능에 대한 많은 정보를 제공하고 있다. <br>
 
 현재 목표하는 단백질인 Gag-Pol polyprotein 또한 UniProt에서 Structure와 Sequence 등 다양한 정보를 확인할 수 있다. <br>
+<br>
+**Structure** <br>
+<img width="966" height="611" alt="image" src="https://github.com/user-attachments/assets/a6dbb7b6-e377-467f-aab9-9e65cfebe7f9" />
+<br>
+
+**Sequence 중 일부** <br>
+<img width="1910" height="835" alt="image" src="https://github.com/user-attachments/assets/1e6a3461-1c3d-4a14-a22f-ad132de37f30" />
+
+
 
 <br>
 
@@ -73,3 +85,23 @@ Gag-Pol은 HIV에서 구조 단백질과 핵심 효소들을 한꺼번에 담고
 ### Modeling
 
 download : [UCSF Chimera Home Page](https://www.cgl.ucsf.edu/chimera/)
+
+<br>
+
+**fetch**
+
+<img width="400" height="747" alt="image" src="https://github.com/user-attachments/assets/9bb6808b-a44e-4c49-b263-8d52e4524559" />
+
+USCF Chimera는 UniProt 코드를 이용해서 불러올 수 있다. <br>
+
+<br>
+
+****
+
+
+
+
+
+
+
+
