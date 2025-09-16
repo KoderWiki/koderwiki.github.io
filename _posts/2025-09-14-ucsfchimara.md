@@ -97,7 +97,7 @@ USCF Chimera는 UniProt 코드를 이용해서 불러올 수 있다. <br>
 
 <img width="1194" height="545" alt="image" src="https://github.com/user-attachments/assets/ffd2d98d-67e3-41fc-9ad6-272370abe4d5" />
 
-UniProt 코드로 불어모녀 다음과 같은 서열을 볼 수 있다. <br>
+UniProt 코드로 불러오면 다음과 같은 서열을 볼 수 있다. <br>
 <br>
 
 **Blast Protein** <br>
@@ -107,7 +107,64 @@ BLAST protein은 Bioinformatics에서 가장 많이 쓰이는 시퀀스 비교 �
 
 <img width="869" height="359" alt="image" src="https://github.com/user-attachments/assets/ec6aed01-a9a1-426f-9b2d-01b5278ad7f5" />
 
-Name, Score, Discription 등 정보와 함께 비슷한 염기서열의 단백질들을 제공해주는데, 이중 Score는 얼마나 비슷한지에 대한 정량적 지표이다,
+Name, Score, Discription 등 정보와 함께 비슷한 염기서열의 단백질들을 제공해주는데, 이중 Score는 얼마나 비슷한지에 대한 정량적 지표이다, <br>
+<br>
+
+**Modeling** <br>
+
+위 유사단백질 중 가장 score가 높은 것을 선택해 모델링하면 다음과 같이 나온다.
+
+<img width="1122" height="896" alt="image" src="https://github.com/user-attachments/assets/f019b829-3480-4232-a0df-e8dfdd1457cc" />
+
+그리고 유사 단백질과 우리가 목표하는 단백질과의 서열을 비교할 수 있다.
+
+<img width="1680" height="960" alt="image" src="https://github.com/user-attachments/assets/173e84bf-7dc9-49ae-a0c4-76462b241eed" />
+
+이를 이용해서 Gag-Pol polyprotein의 형태를 예측해보자. <br>
+
+<br>
+
+### Homology Modeling
+
+Homology Modeling은 이미 알려진 단백질의 구조를 이용해서 구조가 알려지지 않은 단백질의 구조를 예측하는 방법이다. <br>
+다음 메뉴에서 homology modeling을 적용할 수 있다.
+
+<img width="168" height="167" alt="image" src="https://github.com/user-attachments/assets/cf0d644f-f657-43d4-a222-1dceb2823be1" />
+
+<br>
+
+Licence Key를 넣어주면 바로 사용이 가능한데, 대학생이면 학교 메일을 통해 무료로 발급받을 수 있다.
+
+<img width="592" height="506" alt="image" src="https://github.com/user-attachments/assets/9feb3ac6-a900-4eb2-b910-8ad0b49a0c5a" />
+
+이는 웹 서버를 통해 실행하는 것이기 때문에 실행하면 다음과 같이 진행된다.
+
+<img width="587" height="219" alt="image" src="https://github.com/user-attachments/assets/8fb9e583-e153-4a05-9ed1-338289cd8427" />
+
+완료가 되면 5개의 예측 모델 리스트와 함께 모델링을 보여준다
+
+<img width="263" height="423" alt="image" src="https://github.com/user-attachments/assets/e14f11ee-c901-45b3-81f7-57c1eb1ac2b9" />
+
+<img width="1057" height="770" alt="image" src="https://github.com/user-attachments/assets/5df52adc-55a5-4fe0-bbd2-ab14b287a4d2" />
+
+**Comparing**
+
+모델이 일치하지 않은 부분은 Ctrl+drag를 통해 염기서열을 확인할 수 있다.
+
+<img width="369" height="298" alt="image" src="https://github.com/user-attachments/assets/d81d948e-568c-4072-ab68-72a55673ac7c" />
+
+<img width="802" height="156" alt="image" src="https://github.com/user-attachments/assets/d176385d-9840-43c2-a825-3ff0f9510384" />
+
+이런식으로 차이나는 부분을 염기서열과 모델링으로 직관적으로 확인할 수 있다
+
+
+
+
+
+
+
+
+
 
 
 
