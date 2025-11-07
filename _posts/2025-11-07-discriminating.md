@@ -6,9 +6,9 @@ subtitle: 'SMILES classification'
 description: >-
   SVM을 이용해 약물과 비약물을 분류하자
 image: >-
-  https://koderwiki.github.io/assets/img/0.post/linear/rbf.png
+  https://koderwiki.github.io/assets/img/0.post/linear/drugsvm.png
 optimized_image: >-
-  https://koderwiki.github.io/assets/img/0.post/linear/rbf.png
+  https://koderwiki.github.io/assets/img/0.post/linear/drugsvm.png
 category: Machine Learning
 tags:
   - SVM
