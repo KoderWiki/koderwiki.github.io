@@ -229,20 +229,192 @@ y_pred
 from sklearn.metrics import precision_score, recall_score, f1_score
 ```
 
+대표적인 기법인 Precision, Recall, F1-score로 평가하자. <br>
+
 #### Precision
+
+Precision은 분류 모델이 Positive로 판정한 것 중, 실제로 Positive인 샘플의 비율이다. <br>
+
+Precision은 Positive로 검출된 결과가 얼마나 정확한지를 나타낸다.
+
+$$
+Precision = \frac {TP}{TP + FP}
+$$
 
 ```python
 precision_score(y_test, y_pred) # (true, pred)
 ```
 
+약 53%의 정확도가 나왔다. 즉, 약이라고 예측 한 것 중에 53%가 맞았다.
+
 #### Recall
+
+Recall은 실제 Positive 샘플 중 분류 모델이 Positive로 판정한 비율이다. <br>
+
+통계학에서는 Sensitivity라고도 한다. Recall은 분류 모델이 실제 Positive 클래스를 얼마나 빠지지 않고 잘 잡아냈는지를 나타낸다.
+
+$$
+Recall = \frac {TP}{TP+FN}
+$$
 
 ```python
 recall_score(y_test, y_pred)
 ```
 
+실제 약 중에서 14%만 제대로 찾았다. 상당히 낮은 수치이다.
+
 #### F1-score
+
+분류 모델에서 Precisiton과 Recall 성능을 동시에 고려하기 위해서 F1-score라는 지표를 사용할 수 있다. F1-score는 Precision과 Recall의 조화평균으로 정의된다. <br>
+
+이는 0에서 1사이값이며 1에 가까울 수록 성능이 좋음을 나타낸다.
+
+$$
+F1-score = 2 \ \text{x} \ \frac {Precision\ \text{x} \ Recall}{Precision + Recall}
+$$
 
 ```python
 f1_score(y_test, y_pred)
 ```
+
+## SVC class in scikit-learn
+
+SVC에는 성능을 향상시키기위한 많은 parameter가 존재한다. <br>
+
+### regularization parameter : C
+
+soft-margin svm에서 나오는 parameter C이다. <br>
+
+C값이 작으면, 다른 그룸에서 속하는 데이터 사이의 간격을 최대한 넓히도록 학습이 되고, 어느정도 오분류는 허용한다. <br>
+
+C값이 크면 다른 그룹에 속하는 데이터 사이의 간격이 좁아지는 것을 허용하지만, 분류 오류를 최소화 하는 방향으로 학습이 된다. <br>
+
+C=10으로 테스트해보자
+
+```python
+my_model_v2 = svm.SVC(C=10) # default 값은 C=1인데, 이 모델에서는 C=10을 사용해서 테스트!
+```
+
+```python
+my_model_v2.fit(X_train, y_train)
+```
+
+```python
+y_pred_v2 = my_model_v2.predict(X_test)
+y_pred_v2
+```
+
+```python
+f1_score(y_test, y_pred_v2)
+```
+
+아까보다 약간 성능이 향상된 것을 볼 수 있다.
+
+```python
+precision_score(y_test, y_pred_v2)
+```
+
+```python
+recall_score(y_test, y_pred_v2)
+```
+
+정확도는 비슷하지만 recall이 향상되었다.<br>
+
+### gamma
+
+gamma 값은 데이터 값이 어느정도로 주변에 영향을 미치는지를 결정한다. <br>
+
+gamma 값이 크면, 각 데이터 값은 그 주변에만 영향을 미치고 곡선이 복잡해지는 반면, <br>
+
+gamma값이 작으면, 넓은 영역에 영향을 미쳐 직선에 가까워진다. <br>
+
+```python
+my_model5 = svm.SVC(gamma = 10.0)
+```
+
+```python
+my_model5.fit(X_train, y_train)
+y_pred = my_model5.predict(X_test)
+```
+
+```python
+f1_score(y_test, y_pred)
+```
+
+```python
+precision_score(y_test, y_pred)
+```
+
+```python
+recall_score(y_test, y_pred)
+```
+
+<br>
+
+### Kernnel
+
+SVM은 다양한 커널이 존재한다. <br>
+
+> - kernel: {‘linear’, ‘poly’, ‘rbf’, ‘sigmoid’, ‘precomputed’} <br>
+>   
+> - kernel ~ core <br>
+>   
+> - 모델의 핵심에 들어있는 수학함수의 형태. <br>
+>   
+> - linear: 선형 (ax+b) <br>
+>   
+> - poly: ax^3 + bx^2 + cx + d <br>
+>   
+> - **rbf**: Gaussian <br>
+>   
+> - sigmoid: 1/(1+e^x) <br>
+>   
+
+```python
+my_model_linear = svm.SVC(kernel='linear')
+my_model_linear.fit(X_train, y_train)
+y_pred_linear = my_model_linear.predict(X_test)
+```
+
+```python
+f1_score(y_test, y_pred_linear)
+```
+
+```python
+my_model_poly = svm.SVC(kernel='poly')
+my_model_poly.fit(X_train, y_train)
+y_pred_poly = my_model_linear.predict(X_test)
+f1_score(y_test, y_pred_poly)
+```
+
+잘 작동이안된다
+
+## Finding the optimal parameters systematically
+
+반복문으로 최적의 파라미터 조합을 찾아보자
+
+```python
+max_f1 = 0.0 
+for c in [0.1, 1, 2, 5, 10, 100, 400, 500, 600, 1000]: # test할 다양한 C 값
+    for g in [0.001, 0.01, 0.1, 0.5, 1.0, 2, 10, 50, 100]:
+        model = svm.SVC(kernel = 'rbf', C=c,gamma=g)
+        model.fit(X_train, y_train) # 학습
+        y_pred = model.predict(X_test)
+        f1 = f1_score(y_test, y_pred)
+        prec = precision_score(y_test, y_pred)
+        recall = recall_score(y_test, y_pred)
+        if f1 > max_f1: # 기존의 최고의 F1 값을 넘었을 때. 
+            max_f1 = f1
+            max_prec = prec
+            max_recall = recall
+            max_c = c
+            max_g = g
+            
+        print(f"C: {c}\tgamma: {g}\tF1: {f1}\tPrec: {prec}\tRecall: {recall}")
+print("--End of Calculation!--")
+print(f"max_C: {max_c}\tmax_gamma: {max_g}\tF1: {max_f1}\tPrec: {max_prec}\tRecall: {max_recall}")
+```
+
+C = 600, gamma = 2일때 F1-score = 0.46으로 가장 좋았다 <br>
+
+72개의 조합 중 좋은거지 최적의 값은 아니다!
