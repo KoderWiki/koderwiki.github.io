@@ -25,6 +25,9 @@ use_math : true
 
 ### Introduction
 
+<img width="1272" height="589" alt="image" src="https://github.com/user-attachments/assets/77637987-a54f-41c4-bf5c-68940d217d46" />
+
+
 이상치 탐지(Anomlay Detection)은 데이터의 정상 패턴에서 크게 벗어나는 관측값이나 행동을 식별하는 작업이다. <br>
 
 이러한 이상 현상은 장비 고장, 구조적 결함, 센서 오류 등 현대의 가상 물리 시스템(Cyber-physical system, CPS)에서 안정성과 안전성에 직접적인 영향을 미칠 수 있다. <br>
@@ -32,6 +35,8 @@ use_math : true
 다양한 산업 분야에서 대규모 데이터가 센서등에 의해 실시간으로 생성됨에 따라, 효과적인 이상치 탐지는 시스템의 신뢰성 확보와 비용 절감, 운영효율 향상을 위한 필수적인 요소가 되었다. <br>
 
 ### Normality vs Novelty vs Anomalies(Outliers)
+
+<img width="361" height="328" alt="image" src="https://github.com/user-attachments/assets/017a87f6-2212-4cf4-a7ab-6521df1597a4" />
 
 **Normality** 은 시스템이 평소에 보여주는 일반적이고 반복적인 정상패턴이다. <br>
 
@@ -44,6 +49,9 @@ Test sample에 대한 Output feature가 특정 Class에 해당하는 output feat
 ### Type of Anomalies
 
 이상치의 종류는 크게 3가지로 분류할 수 있다. <br>
+
+<img width="1110" height="327" alt="image" src="https://github.com/user-attachments/assets/49d968ef-c916-4dd0-94c0-5edb0e6ac3a3" />
+
 
 <br>
 
@@ -109,6 +117,9 @@ ex) K-Means distance 기반, LOF, Graph-based Outlier Detection, MCD , etc <br>
 
 ### Deep Anomaly Detection approach 분류
 
+<img width="1405" height="511" alt="image" src="https://github.com/user-attachments/assets/faa8f483-b71e-48f3-8228-77d026f2059f" />
+
+
 #### Deep Learning for Feature Extraction
 
 Deep Learning을 오직 Feature Extraction 에만 사용하고, acnomaly scoring은 전통적 ML기법(OCSVM, IForest, etc) 로 별도 수행한다. <br>
@@ -128,3 +139,10 @@ Anomaly score 자체를 loss function으로 직접 최적화 하여 feature extr
 대표적으로 Deep SVDD, OCNN 등이 있다. <br>
 
 ### Categorization of Deep Anomaly Detection
+
+<img width="1137" height="768" alt="image" src="https://github.com/user-attachments/assets/7e0d81ce-becb-4cac-81a8-6277771d6895" />
+
+### Reference
+R. Chalapathy and S. Chawla, “Deep learning for anomaly detection: A survey,” arXiv preprint arXiv:1901.03407, 2019. <br>
+K. Choi, J. Yi, C. Park, and S. Yoon, “Deep Learning for Anomaly Detection in Time-Series Data: Review, Analysis, and Guidelines,” IEEE Access, vol. 9, pp. 120043-120065, 2021, doi:10.1109/ACCESS.2021.3107975 <br>
+A. Garg, W. Zhang, J. Samaran, S. Ramasamy, and C.-S. Foo, “An Evaluation of Anomaly Detection and Diagnosis in Multivariate Time Series,” arXiv preprint arXiv:2109.11428, 2021
