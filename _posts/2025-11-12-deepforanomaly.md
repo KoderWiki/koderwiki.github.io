@@ -1,7 +1,7 @@
 ---
 date: 2025-11-12 12:07:00
 layout: post
-title: Deep Learning for Anomaly Detection : A Survey
+title: A Survey of Deep Learning for Anomaly Detection 
 subtitle: 'Deep Learning for Anomaly Detection'
 description: >-
   이상치 탐지 기법에 딥러닝 적용
