@@ -52,7 +52,6 @@ Test sample에 대한 Output feature가 특정 Class에 해당하는 output feat
 
 <img width="1110" height="327" alt="image" src="https://github.com/user-attachments/assets/49d968ef-c916-4dd0-94c0-5edb0e6ac3a3" />
 
-
 <br>
 
 #### Pattern 종류에 따라 분류
@@ -67,7 +66,7 @@ Test sample에 대한 Output feature가 특정 Class에 해당하는 output feat
 
 **Local outlier** : 전체 분포에서는 정상처럼 보이지만 이웃 데이터와 비교했을때 이상치인 값 (cluster 구조일때 중요하다, LOF 같은 방법으로 탐지) <br>
 
-**Global outlier** : 전체 데이터 분포 기준에서 멀리 떨어진 극단값 <ㅠㄱ>
+**Global outlier** : 전체 데이터 분포 기준에서 멀리 떨어진 극단값 <br>>
 
 #### Input data type에 따라 분류
 
