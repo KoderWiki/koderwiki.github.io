@@ -9,7 +9,7 @@ image: >-
   https://koderwiki.github.io/assets/img/0.post/linear/drugsvm.png
 optimized_image: >-
   https://koderwiki.github.io/assets/img/0.post/linear/drugsvm.png
-category: Machine Learning
+category: Classification
 tags:
   - SVM
   - Machine Learning
