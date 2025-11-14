@@ -116,3 +116,15 @@ Deep Learning을 오직 Feature Extraction 에만 사용하고, acnomaly scoring
 AlexNet, VGG, ResNet 등의 pre-trained CNN 모델을 통해 Feature Extraction 진행한 후 해당 feature 기반으로 anomaly scoring 진행한다. <br>
 
 #### Learning Feature Representations of Nomality
+
+모델이 정상 데이터의 분포적 구조를 직접 학습하도록 Reconstruction, Prediction 기반의 loss를 사용하여 nomality를 잘 표현하는 latent representation을 학습하는 방식이다. <br>
+
+학습 후 anomaly score는 보통 reconstruction error, prediction error 등의 기준으로 계산된다. <br>
+
+#### End-to-End Anomaly Score Learning
+
+Anomaly score 자체를 loss function으로 직접 최적화 하여 feature extraction과 anomaly scoring을 하나의 end-to-end 구조로 동시에 학습하도록 하는 방식이다. <br>
+
+대표적으로 Deep SVDD, OCNN 등이 있다. <br>
+
+### Categorization of Deep Anomaly Detection
