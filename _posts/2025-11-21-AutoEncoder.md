@@ -1,5 +1,5 @@
 ---
-date: 2025-04-30 01:35:59
+date: 2025-11-21 01:35:59
 layout: post
 title: Auto-Encoder
 subtitle: 'Latent Space using Autoencoder'
