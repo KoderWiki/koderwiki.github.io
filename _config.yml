@@ -3,18 +3,16 @@ name: Koder Wiki
 title: Koder Wiki | Project Blog
 description: Math Blog -> Kodernote.github.io
 tags:
-  - Computer Vision
   - Machine Learning
-  - Web Programming 
-  - Game Programming
+  - Deep Learning
+  - Anomaly Detection
+  - Data Science
 show_hero: true
 menu:
   - title: Home
     url: /
   - title: About
     url: /about/
-  - title: Contact
-    url: /contact/
   - title: Ko Web
     url: https://ko-web.com
   - title: KoderNote
