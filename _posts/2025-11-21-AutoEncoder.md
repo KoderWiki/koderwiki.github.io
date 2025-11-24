@@ -118,14 +118,7 @@ $$
 
 Adam은 1st moment(평균), 2st moment(분산, 제곱평균)을 자동으로 추정해서 학습하고 안정화 시킨다. <br>
 
-#### Adam Optimizer (Adaptive Moment Estimation)
 
-Adam은 기본적으로 momentum + RMSProp 조합이다.
+### Latent Space
 
-##### First Moment - Momentum
-
-$$
-m_{t} = \beta_{1}v_{t-1} + (1-\beta_{1})g_{t}^2
-$$
-
-gradient 제곱의 이동평균
+AE의 핵심은 latent space이다. 이 잠재된 축소공간이 AE가 학습한 데이터의 핵심 표현(embedding)으로 이 공간에서 원본 데이터의 중요한 feature만 압축되어 이상치 탐지, 특징 추출, 노이즈 제거 등 다양한 용도로 사용된다.
