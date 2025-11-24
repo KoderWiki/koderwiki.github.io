@@ -13,6 +13,7 @@ permalink: /about/
 
 Traditional ML(e.g., SVM, OCSVM, IForest, etc)와 Deep Learning (e.g., Autoencoder, CNN, Transformer, etc)을 결합한 이상치 탐지에 중점을 두고 있습니다 <br>
 <br>
+e-mail : rhrjsdn0610@gmail.com
 
 # Education
 
