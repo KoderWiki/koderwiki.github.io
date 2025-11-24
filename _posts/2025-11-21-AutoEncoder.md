@@ -24,6 +24,9 @@ use_math : true
 
 ## Auto-Encoder
 
+<img width="948" height="482" alt="image" src="https://github.com/user-attachments/assets/74cce6e0-6420-4ff7-8b90-0fc6c0b54c17" />
+
+
 ### Introduction
 
 Auto-Encoder(AE)는 입력데이터를 스스로 압축(Encoding)하고 다시 복원(Decoding)하는 비지도 학습(unsupervised learning) 기반의 딥러닝 구조이다. <br>
@@ -33,6 +36,9 @@ Auto-Encoder(AE)는 입력데이터를 스스로 압축(Encoding)하고 다시 �
 loss function과 encoder, decoder의 구조의 따라 VAE, ConvAE 다양한 종류의 AE를 설계할 수 있다. <br>
 
 ### Auto-Encoder
+
+<img width="856" height="395" alt="image" src="https://github.com/user-attachments/assets/19104806-a6ce-4c9b-b167-fef3948c4bb8" />
+
 
 AE는 입력 값 x를 받아, 잠재공간(latent spce)라 불리는 더 작은 차원 z로 변환 한뒤, 원본과 대조하여 유사한 출력 x'을 재구성하는 모델이다. <br>
 
@@ -122,3 +128,5 @@ Adam은 1st moment(평균), 2st moment(분산, 제곱평균)을 자동으로 추
 ### Latent Space
 
 AE의 핵심은 latent space이다. 이 잠재된 축소공간이 AE가 학습한 데이터의 핵심 표현(embedding)으로 이 공간에서 원본 데이터의 중요한 feature만 압축되어 이상치 탐지, 특징 추출, 노이즈 제거 등 다양한 용도로 사용된다.
+
+<img width="522" height="277" alt="image" src="https://github.com/user-attachments/assets/55ae8c9a-0620-4dc3-a414-a7eba8a46b18" />
