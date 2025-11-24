@@ -11,8 +11,7 @@ permalink: /about/
 
 # About
 
-Computer Vision과 Machine Learning의 다양한 통계 기법들을 공부하고, 실제 데이터에 적용해보면서 응용 능력을 키우고 있습니다. <br> 
-특히 이미지 처리 파이프라인과 이상치 탐지, 분류 문제에서 통계 기반 방법(예: PCA, Mahalanobis Distance, MCD 등)과 딥러닝 기반 기법(CNN, Autoencoder, Transformer 기반 Vision 모델 등)을 함께 실험해보며 탐구하고있습니다. <br>
+Traditional ML(e.g., SVM, OCSVM, IForest, etc)와 Deep Learning (e.g., Autoencoder, CNN, Transformer, etc)을 결합한 이상치 탐지에 중점을 두고 있습니다 <br>
 <br>
 
 # Education
