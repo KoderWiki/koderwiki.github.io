@@ -11,9 +11,11 @@ optimized_image: >-
   https://koderwiki.github.io/assets/img/0.post/linear/autoencoder.png
 category: Computer Vision
 tags:
-  - CSE
-  - Signal Processing
-  - Medical Imaging
+ - Autoencoder
+  - Machine Learning
+  - Deep Learning
+  - Anomaly Detection
+  - Data Science
   - blog
 author: geonu.Ko
 paginate: true
