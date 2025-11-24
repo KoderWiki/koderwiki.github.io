@@ -17,7 +17,13 @@ Traditional ML(e.g., SVM, OCSVM, IForest, etc)와 Deep Learning (e.g., Autoencod
 # Education
 
 **B.S., Incheon National University** (Mar. 2022 – Present) <br>
-**Undergraduate Research Assistant, DLAB** (Jun. 2025 – Present)
+**Undergraduate Research Assistant, DLAB** (Aug. 2025 – Present)
+
+### Seminar Topic
+
+Aug. 2025 ~ Sep. 2025 : MCD <br>
+Oct. 2025 ~ Nov. 2025 : SVM <br>
+Nov. 2025 ~ Dec. 2025 : OCSVM, SVDD, Autoencoder <br>
 
 # Web site
 
