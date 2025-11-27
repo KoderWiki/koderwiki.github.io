@@ -62,6 +62,9 @@ data set을 관련 정도에 따라 클러스터로 묶고, 이들 클러스터�
 
 **Dendrogram (계통도)** <br>
 
+<img width="559" height="403" alt="image" src="https://github.com/user-attachments/assets/1768cdae-7fde-422e-be1c-e017e51590cd" />
+
+
 클러스터 간의 관계를 트리형태로 표현 <br>
 
 **Agglomerative** <br>
@@ -72,6 +75,9 @@ AGNES : bottom-up
 
 DIANA : top-down
 
+<img width="844" height="409" alt="image" src="https://github.com/user-attachments/assets/0f9c47fb-87ea-4137-897d-f373b5fca762" />
+
+
 ### Partitioning-based Clustering
 
 **Centroid (클러스터의 중심 or 평균 기반)** <br>
@@ -81,6 +87,9 @@ K-means 알고리즘
 **Medoid(빈도수가 많은 중간점 기반)** <br>
 
 K-medoids 알고리즘 <br>
+
+<img width="639" height="282" alt="image" src="https://github.com/user-attachments/assets/3e06350d-2847-4284-8fc3-3b63ea658684" />
+
 
 #### K-means 알고리즘
 
@@ -118,6 +127,9 @@ data들이 분포에 지정되면, data들로 부터 분포의 모수를 재 계
 
 #### EM (Expectation Maximization) 알고리즘
 
+<img width="832" height="599" alt="image" src="https://github.com/user-attachments/assets/07323c34-c119-4154-92cf-d5f2811916a4" />
+
+
 분포 기반 클러스터링으로 GMM (Gaussian Mixture Model)에 기반한다. <br>
 
 (GMM assumes that if there are K clusters, the data is generated from a mixture of K Gaussian distibutions) <br>
@@ -134,11 +146,17 @@ EM 알고리즘은 K개의 모델에 대한 각 매개변수 θ를 임의로 지
 
 K-means와 EM 둘다 종료시까지 반복하는 반복 알고리즘이지만, K-means는 거리기반이고 EM은 분포기반이라는 큰차이가 존재한다. <br>
 
+<img width="929" height="374" alt="image" src="https://github.com/user-attachments/assets/dac3d7ae-61b0-4ebd-8bc6-2ee2d3ce3c78" />
+
+
 ### Density-based Clustering
 
 밀도기반 군집화는 연결성, 밀도 (동일 면적에 데이터 개수)에 기반한다.
 
 #### DBSCAN(Density-based spatial clustering of applications with noise)
+
+<img width="1070" height="400" alt="image" src="https://github.com/user-attachments/assets/2f012b5d-2d80-481a-a23b-cde798fe91b5" />
+
 
 data가 몰려있어 밀도가 높은 부분을 클러스터로 만드는 방식이다.   <br>
 
@@ -153,3 +171,8 @@ noise point : 어느 군집에도 포함되지 않는 점 <br>
 군집 내에 다른 군집의 코어점이 있으면 하나의 군집으로 연결한다. <br>
 
 군집의 개수를 미리 정하지 않아도 되고 군집 연결을 통해 기하학적 형태의 군집이 가능하다는 장점이 있다. 또한 군집기반 이상치 탐지 용법으로도 사용된다.
+
+### Reference
+[Pattern Recognition and ML](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/?from=http%3A%2F%2Fresearch.microsoft.com%2F~cmbishop%2Fprml%2F) <br>
+[EM Clustering](https://www.jaebok-lee.com/posts/ko/em-algorithm) <br>
+Wikipedia documents
