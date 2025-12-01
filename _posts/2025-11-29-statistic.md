@@ -142,9 +142,13 @@ $$
 
 $$
 d(p,q) = \sqrt{(p-q)^2}
-$$$$
+$$
+
+$$
 d(p,q) = \sqrt{(q_1-p_1)^2+(q_2-p_2)^2}
-$$$$
+$$
+
+$$
 d(p,q)=\sqrt{(p_1-q_1)^2+(p_2-q_2)^2+....+(p_n-q_n)^2}
 $$
 
@@ -158,7 +162,9 @@ n차원 공간의 데이터는 vector로 생각할 수 있기 때문에, 유사�
 
 $$
 a ·b = \|a\|\|b\|cos\theta
-$$$$
+$$
+
+$$
 similarity = cos\theta = \frac{A·B}{\|A\|\|B\|} = \frac{\sum_{i=1}^{n}A_i\times B_i}{\sqrt{\sum(A_i)^2}\times\sqrt{\sum(B_i)^2}}
 $$
 
@@ -240,4 +246,39 @@ n개 데이터에 대해 (n-1)차 다항 함수를 선택한다면 모두를 지
 
 ### 로지스틱 회귀 (Logistic Regression)
 
-이진 분류 (binary classification)
+이진 분류 (binary classification)를 위해 확률을 예측하는 모델이다 <br>
+
+종속변수 y는 연속형 데이터가아닌 이산형 (이항분포)데이터가 나와야 하며, 확률로 나와야 하기 때문에 0,1사이 값이 나온다 <br>
+
+cf. Poisson Regression <br>
+
+일반적인 선형회귀 식을 사용하면, 연속형 데이터가 나오기 때문에 실수값 Y 범위를 확률값 p 범위 [0, 1]로 모델링하는 Logistic 함수를 사용한다 <br>
+
+$$
+logit = ln(\frac{p}{1-p})=ln(Odds)=\beta_0+\beta_1x_1+...
+$$
+
+y\sim Bernouㅣㅣ이진 분류 (binary classification)를 위해 확률을 예측하는 모델이다 <br>
+
+종속변수 y는 연속형 데이터가아닌 이산형 (이항분포)데이터가 나와야 하며, 확률로 나와야 하기 때문에 0,1사이 값이 나온다 <br>
+
+cf. Poisson Regression <br>
+
+일반적인 선형회귀 식을 사용하면, 연속형 데이터가 나오기 때문에 실수값 Y 범위를 확률값 p 범위 [0, 1]로 모델링하는 Logistic 함수를 사용한다 <br>
+
+$$
+logit = ln(\frac{p}{1-p})=ln(Odds)=\beta_0+\beta_1x_1+...
+$$
+
+$$
+y\sim Bernoulli(p)
+$$
+
+선형 회귀를 이산적인 이진 분류에 적용할 때 Sigmoid 함수를 사용함으로써 [0,1]로 변환한다. <br>
+
+$$
+p(xwin) = f(t) = \frac{e^t}{e^t+1} = \frac{1}{1+e^{-t}}
+$$
+
+선형식 = logit(p), 확률 = sigmoid(linear) 서로 역함수 관계이다
+
