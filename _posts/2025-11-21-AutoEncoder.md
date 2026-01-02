@@ -11,7 +11,7 @@ optimized_image: >-
   https://koderwiki.github.io/assets/img/0.post/linear/autoencoder.png
 category: Computer Vision
 tags:
- - Autoencoder
+  - Autoencoder
   - Machine Learning
   - Deep Learning
   - Anomaly Detection
