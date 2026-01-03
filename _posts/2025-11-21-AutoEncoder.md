@@ -9,7 +9,7 @@ image: >-
   https://koderwiki.github.io/assets/img/0.post/linear/autoencoder.png
 optimized_image: >-
   https://koderwiki.github.io/assets/img/0.post/linear/autoencoder.png
-category: Computer Vision
+category: Deep Learning
 tags:
   - Autoencoder
   - Machine Learning
