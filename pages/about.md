@@ -18,7 +18,7 @@ e-mail : rhrjsdn0610@gmail.com
 # Education
 
 **B.S., Incheon National University** (Mar. 2022 – Present) <br>
-**Undergraduate Research Assistant, DLAB** (Aug. 2025 – Present)
+**Undergraduate Research Assistant, DL Lab** (Aug. 2025 – Present, Advisor: Prof.Seunghwan AN)
 
 ### Seminar Topic
 
