@@ -11,7 +11,7 @@ permalink: /about/
 
 # About
 
-Traditional ML(e.g., SVM, OCSVM, IForest, etc)와 Deep Learning (e.g., Autoencoder, CNN, Transformer, etc)을 결합한 이상치 탐지에 중점을 두고 있습니다 <br>
+Traditional ML(e.g., SVM, OCSVM, GBDT, etc)와 Deep Learning (e.g., Autoencoder, Deep SVDD, etc)등의 이상치 탐지 기법에 중점을 두고 있습니다 <br>
 <br>
 e-mail : rhrjsdn0610@gmail.com
 
@@ -23,8 +23,9 @@ e-mail : rhrjsdn0610@gmail.com
 ### Seminar Topic
 
 Aug. 2025 ~ Sep. 2025 : MCD <br>
-Oct. 2025 ~ Nov. 2025 : SVM <br>
-Nov. 2025 ~ Dec. 2025 : OCSVM, SVDD, Autoencoder <br>
+Oct. 2025 ~ Nov. 2025 : SVM, OCSVM <br>
+Nov. 2025 ~ Dec. 2025 : SVDD, Autoencoder, Deep SVDD <br>
+Jan. 2026 ~ : rMCL
 
 # Web site
 
